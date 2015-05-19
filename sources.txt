@@ -1,0 +1,3 @@
+Some map view code is sampled from the PinSample app.
+
+Other samples from Udacity course: iOS Networking with Swift
