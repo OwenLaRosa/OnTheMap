@@ -28,12 +28,14 @@ class LoginViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
         subscribeToNotifications()
         activityView.hidden = true
         activityView.hidesWhenStopped = true
     }
     
     override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
@@ -44,6 +46,8 @@ class LoginViewController: UIViewController {
         // configure the UI
         activityView.hidden = false
         loginButton.enabled = false
+        usernameField.enabled = false
+        passwordField.enabled = false
         activityView.startAnimating()
         // begin logging in
         var api = API()
@@ -87,12 +91,14 @@ class LoginViewController: UIViewController {
     func completeLogin() {
         // login successful, proceed to main content
         self.resetUI()
-        performSegueWithIdentifier("showNavigationController", sender: nil)
+        performSegueWithIdentifier("showTabBarController", sender: nil)
     }
     
     func resetUI() {
         // stop animating and hide the activity indicator
         activityView.stopAnimating()
+        usernameField.enabled = true
+        passwordField.enabled = true
         loginButton.enabled = true
     }
 

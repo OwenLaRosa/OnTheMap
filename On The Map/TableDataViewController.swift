@@ -16,6 +16,7 @@ class TableDataViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
         // refresh the table view
         tableView.reloadData()
     }

@@ -31,7 +31,7 @@ class API {
                 NSNotificationCenter.defaultCenter().postNotificationName(downloadDidFail, object: nil)
                 return
             }
-            // get usable data
+            // get usable data, first 5 bytes are not needed so remove them
             let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
             let response: NSString = NSString(data: newData, encoding: NSUTF8StringEncoding)!
             // check for login failure
@@ -90,8 +90,8 @@ class API {
         
         // make a request to get student information
         let request = NSMutableURLRequest(URL: NSURL(string: "https://api.parse.com/1/classes/StudentLocation")!)
-        request.addValue("***PARSE_APPLICATION_ID***", forHTTPHeaderField: "X-Parse-Application-Id")
-        request.addValue("***PARSE_REST_API_KEY***", forHTTPHeaderField: "X-Parse-REST-API-Key")
+        request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
+        request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil { // Handle error...
@@ -164,7 +164,7 @@ class API {
                 "mediaURL": mediaURL
             ]
             let studentInfo = StudentInformation(info: info)
-            self.appDelegate.students.insert(studentInfo, atIndex: 0)
+            self.appDelegate.students.append(studentInfo)
             
             // dismiss view and update map data
             NSNotificationCenter.defaultCenter().postNotificationName(studentDataShouldUpdate, object: nil)

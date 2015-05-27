@@ -23,16 +23,19 @@ class AddLocationViewController: UIViewController {
     let textFieldDelegate = TextFieldDelegate()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         subscribeToNotifications()
         locationField.delegate = textFieldDelegate
         linkField.delegate = textFieldDelegate
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
         activityIndicator.hidden = true
     }
     
     override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
@@ -40,10 +43,8 @@ class AddLocationViewController: UIViewController {
         // remove cursor from text fields
         locationField.resignFirstResponder()
         linkField.resignFirstResponder()
-        // check if the URL is valid
-        if linkField.text == "" {
-            NSNotificationCenter.defaultCenter().postNotificationName(invalidURLError, object: nil)
-        } else if let url = NSURL(string: linkField.text) {
+        // check if the link field is empty
+        if validateUrl(linkField.text) {
             // geocode the location
             let geocoder = CLGeocoder()
             
@@ -98,6 +99,20 @@ class AddLocationViewController: UIViewController {
         let alertView = UIAlertController(title: "Geocoding Failed", message: "The location \"\(locationField.text)\" could not be found. Please try again with a more specific location.", preferredStyle: .Alert)
         alertView.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
         self.presentViewController(alertView, animated: true, completion: nil)
+    }
+    
+    // source: http://discussions.udacity.com/t/validating-urls/14093
+    func validateUrl(url: String) -> Bool {
+        // determines if the url is formatted properly
+        
+        // regular url format
+        let pattern = "^(https?:\\/\\/)([a-zA-Z0-9_\\-~]+\\.)+[a-zA-Z0-9_\\-~\\/\\.]+$"
+        // check if string conforms to format
+        if let match = url.rangeOfString(pattern, options: .RegularExpressionSearch) {
+            return true
+        } else {
+            return false
+        }
     }
     
 }
