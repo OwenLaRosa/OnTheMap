@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
+import MapKit
 import CoreLocation
 
-class AddLocationViewController: UIViewController {
+class AddLocationViewController: UIViewController, UITextFieldDelegate {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
@@ -20,12 +21,14 @@ class AddLocationViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var mapView: MKMapView!
+    
     let textFieldDelegate = TextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribeToNotifications()
-        locationField.delegate = textFieldDelegate
+        locationField.delegate = self
         linkField.delegate = textFieldDelegate
     }
     
@@ -113,6 +116,33 @@ class AddLocationViewController: UIViewController {
         } else {
             return false
         }
+    }
+    
+    // MARK: Text Field Delegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // remove cursor from the text field
+        textField.resignFirstResponder()
+        
+        // geocode the location and create a pin
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(locationField.text, completionHandler: {(placemark, error) -> () in
+            if error != nil {
+                // do not display any new information on the map
+                return
+            }
+            // create a placemark object and get the coordinates
+            let location = placemark[0] as! CLPlacemark
+            let pin = MKPointAnnotation()
+            pin.coordinate.latitude = location.location.coordinate.latitude
+            pin.coordinate.longitude = location.location.coordinate.longitude
+            // move the map to the location, then add the pin
+            let centerCoordinate =  CLLocationCoordinate2DMake(pin.coordinate.latitude, pin.coordinate.longitude)
+            self.mapView.setCenterCoordinate(centerCoordinate, animated: true)
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            self.mapView.addAnnotation(pin)
+        })
+        return true
     }
     
 }

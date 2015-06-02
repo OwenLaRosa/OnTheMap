@@ -142,17 +142,26 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="88N-9E-xK8">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
                             </activityIndicatorView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hVY-WE-Yh3">
+                                <rect key="frame" x="140" y="206" width="320" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="MEe-Ap-IPj"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sxR-sV-Ift" firstAttribute="top" secondItem="8TE-1r-AUt" secondAttribute="bottom" constant="8" id="3LB-dy-JWb"/>
                             <constraint firstItem="8TE-1r-AUt" firstAttribute="leading" secondItem="mjl-2d-O15" secondAttribute="leadingMargin" id="6Eu-mS-4fu"/>
+                            <constraint firstItem="FQu-wh-hA3" firstAttribute="top" secondItem="hVY-WE-Yh3" secondAttribute="bottom" constant="154" id="6Ga-jW-d2T"/>
                             <constraint firstItem="fQx-pZ-MlQ" firstAttribute="trailing" secondItem="mjl-2d-O15" secondAttribute="trailingMargin" id="8BJ-Vq-6PH"/>
                             <constraint firstAttribute="centerX" secondItem="88N-9E-xK8" secondAttribute="centerX" id="A4m-RE-Y1a"/>
+                            <constraint firstAttribute="centerX" secondItem="hVY-WE-Yh3" secondAttribute="centerX" id="D6f-Mh-ZZa"/>
                             <constraint firstItem="8TE-1r-AUt" firstAttribute="top" secondItem="WNM-OR-Aau" secondAttribute="bottom" constant="8" symbolic="YES" id="JgO-NE-kfS"/>
                             <constraint firstItem="88N-9E-xK8" firstAttribute="top" secondItem="fQx-pZ-MlQ" secondAttribute="bottom" constant="92" id="LiX-xu-0iQ"/>
                             <constraint firstItem="yik-N7-4qr" firstAttribute="top" secondItem="YCk-r7-bpO" secondAttribute="bottom" id="Osm-pX-Ph4"/>
                             <constraint firstItem="fQx-pZ-MlQ" firstAttribute="leading" secondItem="mjl-2d-O15" secondAttribute="leadingMargin" id="cHL-PF-QzJ"/>
+                            <constraint firstItem="hVY-WE-Yh3" firstAttribute="top" secondItem="fQx-pZ-MlQ" secondAttribute="bottom" constant="8" id="cTz-0F-ZIm"/>
                             <constraint firstItem="yik-N7-4qr" firstAttribute="leading" secondItem="mjl-2d-O15" secondAttribute="leading" id="ffW-sU-BQK"/>
                             <constraint firstItem="8TE-1r-AUt" firstAttribute="trailing" secondItem="mjl-2d-O15" secondAttribute="trailingMargin" id="fhd-yq-Z1d"/>
                             <constraint firstItem="WNM-OR-Aau" firstAttribute="leading" secondItem="8TE-1r-AUt" secondAttribute="leading" id="gQL-QL-krI"/>
@@ -169,6 +178,7 @@
                         <outlet property="activityIndicator" destination="88N-9E-xK8" id="Ipf-fT-Qbs"/>
                         <outlet property="linkField" destination="fQx-pZ-MlQ" id="u0h-hB-16D"/>
                         <outlet property="locationField" destination="8TE-1r-AUt" id="AVO-Og-UUi"/>
+                        <outlet property="mapView" destination="hVY-WE-Yh3" id="LrX-mF-5uc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpq-OF-7nk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,7 +245,7 @@
                             <constraint firstItem="gjD-Dc-dyg" firstAttribute="trailing" secondItem="Snh-yq-EtW" secondAttribute="trailing" id="orT-uQ-5yI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="70A-JE-O6i"/>
+                    <tabBarItem key="tabBarItem" title="Table" id="70A-JE-O6i"/>
                     <navigationItem key="navigationItem" title="Students" id="Sx4-RR-p99">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ftk-X7-92I"/>
                     </navigationItem>
@@ -247,7 +257,7 @@
             </objects>
             <point key="canvasLocation" x="-274" y="335"/>
         </scene>
-        <!--Item 1-->
+        <!--Map-->
         <scene sceneID="tgN-aP-6OS">
             <objects>
                 <viewController id="ZEH-IQ-3PO" customClass="MapDataViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
@@ -294,7 +304,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="pBw-7a-9Is" secondAttribute="trailing" constant="-16" id="zT6-IN-1Eb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="D6d-Uo-tbS"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="D6d-Uo-tbS"/>
                     <connections>
                         <outlet property="mapView" destination="pBw-7a-9Is" id="LQX-3r-Kpx"/>
                     </connections>
