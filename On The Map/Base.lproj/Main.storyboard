@@ -46,32 +46,41 @@
                                     <action selector="login:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="krF-xr-oeA"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="NNl-c9-vVS">
-                                <rect key="frame" x="291" y="413" width="20" height="20"/>
-                            </activityIndicatorView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lAY-IC-lKN">
                                 <rect key="frame" x="16" y="254" width="568" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.71111383601896316" blue="0.39051217175627229" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMz-tS-Lvv">
+                                <rect key="frame" x="189" y="389" width="225" height="30"/>
+                                <state key="normal" title="Don't have an account? Sign up.">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="NNl-c9-vVS">
+                                <rect key="frame" x="291" y="427" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.56470588235294117" blue="0.14509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lAY-IC-lKN" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="0CQ-ay-47c"/>
                             <constraint firstItem="CTt-eO-KEq" firstAttribute="top" secondItem="Kyf-Wc-Onu" secondAttribute="bottom" constant="8" id="6tr-Wh-0sW"/>
-                            <constraint firstAttribute="centerX" secondItem="NNl-c9-vVS" secondAttribute="centerX" id="C4G-kc-7I0"/>
+                            <constraint firstAttribute="centerX" secondItem="NNl-c9-vVS" secondAttribute="centerX" constant="-1" id="C4G-kc-7I0"/>
                             <constraint firstItem="lAY-IC-lKN" firstAttribute="top" secondItem="OOc-5c-sXF" secondAttribute="bottom" constant="8" id="Dpz-Mr-vqy"/>
                             <constraint firstItem="Fbf-Hu-cKX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="HS4-Nf-CLR"/>
                             <constraint firstItem="Kyf-Wc-Onu" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Irn-RE-ggj"/>
                             <constraint firstItem="OOc-5c-sXF" firstAttribute="top" secondItem="Fbf-Hu-cKX" secondAttribute="bottom" constant="8" symbolic="YES" id="LnK-fC-9yZ"/>
                             <constraint firstItem="Kyf-Wc-Onu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="QTK-KI-TXE"/>
                             <constraint firstItem="CTt-eO-KEq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="QgU-Ty-HL4"/>
+                            <constraint firstAttribute="centerX" secondItem="iMz-tS-Lvv" secondAttribute="centerX" constant="-1.5" id="S91-4b-ID1"/>
                             <constraint firstItem="lAY-IC-lKN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Vf1-ig-4ap"/>
                             <constraint firstItem="Kyf-Wc-Onu" firstAttribute="top" secondItem="lAY-IC-lKN" secondAttribute="bottom" constant="8" id="YPw-uw-vOM"/>
                             <constraint firstAttribute="centerX" secondItem="OOc-5c-sXF" secondAttribute="centerX" constant="-0.5" id="YbH-Q3-cSj"/>
                             <constraint firstItem="CTt-eO-KEq" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="aVh-eG-ybh"/>
-                            <constraint firstItem="NNl-c9-vVS" firstAttribute="top" secondItem="CTt-eO-KEq" secondAttribute="bottom" constant="32" id="gNN-lM-3dU"/>
+                            <constraint firstItem="iMz-tS-Lvv" firstAttribute="top" secondItem="CTt-eO-KEq" secondAttribute="bottom" constant="8" id="g1r-t9-yDA"/>
+                            <constraint firstItem="NNl-c9-vVS" firstAttribute="top" secondItem="CTt-eO-KEq" secondAttribute="bottom" constant="46" id="gNN-lM-3dU"/>
                             <constraint firstAttribute="centerX" secondItem="Kyf-Wc-Onu" secondAttribute="centerX" id="lpF-rI-3H0"/>
                             <constraint firstAttribute="centerX" secondItem="CTt-eO-KEq" secondAttribute="centerX" id="p06-L0-WbW"/>
                             <constraint firstItem="Fbf-Hu-cKX" firstAttribute="centerX" secondItem="OOc-5c-sXF" secondAttribute="centerX" id="sbp-ub-3nA"/>
