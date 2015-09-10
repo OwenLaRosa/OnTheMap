@@ -247,7 +247,7 @@
                             <constraint firstItem="gjD-Dc-dyg" firstAttribute="trailing" secondItem="Snh-yq-EtW" secondAttribute="trailing" id="orT-uQ-5yI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Table" id="70A-JE-O6i"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="List" id="70A-JE-O6i"/>
                     <navigationItem key="navigationItem" title="Students" id="Sx4-RR-p99">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ftk-X7-92I"/>
                     </navigationItem>
@@ -306,7 +306,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="pBw-7a-9Is" secondAttribute="trailing" constant="-16" id="zT6-IN-1Eb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="D6d-Uo-tbS"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="D6d-Uo-tbS"/>
                     <connections>
                         <outlet property="mapView" destination="pBw-7a-9Is" id="LQX-3r-Kpx"/>
                     </connections>
@@ -337,6 +337,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="List" width="32" height="32"/>
+        <image name="Map" width="32" height="32"/>
         <image name="UdacityClear" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
