@@ -54,6 +54,10 @@ class LoginViewController: UIViewController {
         api.loginWithUdacity(usernameField.text, password: passwordField.text)
     }
     
+    @IBAction func signUpTapped(sender: UIButton) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "https://www.udacity.com/account/auth#!/signup")!)
+    }
+    
     func subscribeToNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDownloadError", name: downloadDidFail, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showLoginError", name: loginDidFail, object: nil)
