@@ -136,7 +136,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yik-N7-4qr">
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yik-N7-4qr">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Add Location" id="gAp-J8-0Ef">
@@ -246,11 +246,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Table" image="List" id="70A-JE-O6i"/>
                     <navigationItem key="navigationItem" title="Students" id="Sx4-RR-p99">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ftk-X7-92I"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ftk-X7-92I">
+                            <connections>
+                                <segue destination="2lR-6r-3lq" kind="presentation" modalTransitionStyle="flipHorizontal" id="GMh-05-fmD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Snh-yq-EtW" id="IcJ-qT-9dm"/>
-                        <segue destination="2lR-6r-3lq" kind="presentation" modalTransitionStyle="flipHorizontal" id="8q5-AI-iwf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXh-GG-7hF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -366,6 +369,6 @@
         <image name="UdacityClear" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u7Q-ri-iS3"/>
+        <segue reference="GMh-05-fmD"/>
     </inferredMetricsTieBreakers>
 </document>
