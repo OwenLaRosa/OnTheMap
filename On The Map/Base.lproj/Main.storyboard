@@ -246,7 +246,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Table" image="List" id="70A-JE-O6i"/>
                     <navigationItem key="navigationItem" title="Students" id="Sx4-RR-p99">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ftk-X7-92I">
+                        <barButtonItem key="rightBarButtonItem" image="Pin" id="Ftk-X7-92I">
                             <connections>
                                 <segue destination="2lR-6r-3lq" kind="presentation" modalTransitionStyle="flipHorizontal" id="GMh-05-fmD"/>
                             </connections>
@@ -311,7 +311,7 @@
                                 <action selector="changeMapType:" destination="ZEH-IQ-3PO" id="yEm-cH-WfF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oed-uv-9BR">
+                        <barButtonItem key="rightBarButtonItem" image="Pin" id="oed-uv-9BR">
                             <connections>
                                 <segue destination="2lR-6r-3lq" kind="presentation" modalTransitionStyle="flipHorizontal" id="u7Q-ri-iS3"/>
                             </connections>
@@ -366,9 +366,10 @@
     <resources>
         <image name="List" width="32" height="32"/>
         <image name="Map" width="32" height="32"/>
+        <image name="Pin" width="32" height="32"/>
         <image name="UdacityClear" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GMh-05-fmD"/>
+        <segue reference="u7Q-ri-iS3"/>
     </inferredMetricsTieBreakers>
 </document>
