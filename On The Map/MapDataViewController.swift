@@ -100,7 +100,7 @@ class MapDataViewController: UIViewController, MKMapViewDelegate {
         })
     }
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView! {
         // custom class to configure map annotations
         let reuseId = "pin"
         
@@ -110,7 +110,7 @@ class MapDataViewController: UIViewController, MKMapViewDelegate {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.canShowCallout = true
             pinView!.pinColor = .Red
-            pinView!.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIButton
+            pinView!.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
         } else {
             pinView!.annotation = annotation
         }
@@ -118,7 +118,7 @@ class MapDataViewController: UIViewController, MKMapViewDelegate {
         return pinView
     }
     
-    func mapView(mapView: MKMapView!, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    func mapView(mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         // open the student's link in Safari
         if control == annotationView.rightCalloutAccessoryView {
             let app = UIApplication.sharedApplication()

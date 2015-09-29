@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
         passwordField.enabled = false
         activityView.startAnimating()
         // begin logging in
-        var api = API()
+        let api = API()
         api.loginWithUdacity(usernameField.text, password: passwordField.text)
     }
     

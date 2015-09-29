@@ -46,7 +46,7 @@ class API {
                 NSNotificationCenter.defaultCenter().postNotificationName(loginDidFail, object: nil)
             } else {
                 // login succeeded, parse the data
-                let parsedData = NSJSONSerialization.JSONObjectWithData(newData, options: .AllowFragments, error: nil) as! NSDictionary
+                let parsedData = (try! NSJSONSerialization.JSONObjectWithData(newData, options: .AllowFragments)) as! NSDictionary
                 let accountInfo = parsedData["account"] as? NSDictionary
                 let userID = accountInfo?["key"] as! String
                 self.appDelegate.userID = userID
@@ -70,7 +70,7 @@ class API {
             }
             // parse the returned data
             let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
-            let parsedData = NSJSONSerialization.JSONObjectWithData(newData, options: .AllowFragments, error: nil) as! NSDictionary
+            let parsedData = (try! NSJSONSerialization.JSONObjectWithData(newData, options: .AllowFragments)) as! NSDictionary
             // get user information
             let userData = parsedData["user"] as! NSDictionary
             let firstName = userData["first_name"] as! String
@@ -104,7 +104,7 @@ class API {
             } else {
             
             // parse the JSON into a usable object
-                let parsedData = NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments, error: nil) as! NSDictionary
+                let parsedData = (try! NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)) as! NSDictionary
                 let results = parsedData["results"] as? [NSDictionary]
                 let numberOfResults = results?.count
                 
