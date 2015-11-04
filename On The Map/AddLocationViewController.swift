@@ -63,9 +63,9 @@ class AddLocationViewController: UIViewController, UITextFieldDelegate {
                     return
                 }
                 let location = placemark![0]
-                let parameters = [
-                    "mapString": self.locationField.text,
-                    "mediaURL": self.linkField.text,
+                let parameters: [String: AnyObject] = [
+                    "mapString": self.locationField.text!,
+                    "mediaURL": self.linkField.text!,
                     "latitude": location.location!.coordinate.latitude as Double,
                     "longitude": location.location!.coordinate.longitude as Double
                 ]
@@ -133,10 +133,10 @@ class AddLocationViewController: UIViewController, UITextFieldDelegate {
                 return
             }
             // create a placemark object and get the coordinates
-            let location = placemark[0] as! CLPlacemark
+            let location = placemark![0]
             let pin = MKPointAnnotation()
-            pin.coordinate.latitude = location.location.coordinate.latitude
-            pin.coordinate.longitude = location.location.coordinate.longitude
+            pin.coordinate.latitude = location.location!.coordinate.latitude
+            pin.coordinate.longitude = location.location!.coordinate.longitude
             // move the map to the location, then add the pin
             let centerCoordinate =  CLLocationCoordinate2DMake(pin.coordinate.latitude, pin.coordinate.longitude)
             self.mapView.setCenterCoordinate(centerCoordinate, animated: true)
