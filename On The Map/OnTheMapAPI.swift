@@ -35,7 +35,7 @@ class API {
                 return
             }
             // get usable data, first 5 bytes are not needed so remove them
-            let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
+            let newData = data!.subdataWithRange(NSMakeRange(5, data!.length - 5))
             let response: NSString = NSString(data: newData, encoding: NSUTF8StringEncoding)!
             // check for login failure
             if response.containsString("\"status\": 400") {
@@ -69,7 +69,7 @@ class API {
                 return
             }
             // parse the returned data
-            let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
+            let newData = data!.subdataWithRange(NSMakeRange(5, data!.length - 5))
             let parsedData = (try! NSJSONSerialization.JSONObjectWithData(newData, options: .AllowFragments)) as! NSDictionary
             // get user information
             let userData = parsedData["user"] as! NSDictionary
@@ -104,7 +104,7 @@ class API {
             } else {
             
             // parse the JSON into a usable object
-                let parsedData = (try! NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)) as! NSDictionary
+                let parsedData = (try! NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)) as! NSDictionary
                 let results = parsedData["results"] as? [NSDictionary]
                 let numberOfResults = results?.count
                 

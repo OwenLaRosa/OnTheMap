@@ -27,7 +27,7 @@ class TableDataViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // create instance of LocationCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("LocationCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("LocationCell")!
         let student = self.appDelegate.students[indexPath.row]
         
         cell.textLabel?.text = "\(student.firstName) \(student.lastName)"

@@ -65,7 +65,7 @@ class MapDataViewController: UIViewController, MKMapViewDelegate {
     func populateMapWithAnnotations() {
         dispatch_async(dispatch_get_global_queue(0, 0), {
             // gather data on background thread
-            var annotations = [AnyObject]()
+            var annotations = [MKAnnotation]()
             for i in self.appDelegate.students {
                 // convert student information to annotation
                 let pin = self.makeAnnoation(i)
@@ -122,7 +122,7 @@ class MapDataViewController: UIViewController, MKMapViewDelegate {
         // open the student's link in Safari
         if control == annotationView.rightCalloutAccessoryView {
             let app = UIApplication.sharedApplication()
-            app.openURL(NSURL(string: annotationView.annotation.subtitle!)!)
+            app.openURL(NSURL(string: annotationView.annotation!.subtitle!!)!)
         }
     }
     

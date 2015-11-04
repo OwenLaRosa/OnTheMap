@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
         activityView.startAnimating()
         // begin logging in
         let api = API()
-        api.loginWithUdacity(usernameField.text, password: passwordField.text)
+        api.loginWithUdacity(usernameField.text!, password: passwordField.text!)
     }
     
     @IBAction func signUpTapped(sender: UIButton) {

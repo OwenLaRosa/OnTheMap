@@ -1,3 +1,4 @@
+
 //
 //  AddLocationViewController.swift
 //  On The Map
@@ -47,26 +48,26 @@ class AddLocationViewController: UIViewController, UITextFieldDelegate {
         locationField.resignFirstResponder()
         linkField.resignFirstResponder()
         // check if the link field is empty
-        if validateUrl(linkField.text) {
+        if validateUrl(linkField.text!) {
             // geocode the location
             let geocoder = CLGeocoder()
             
             // show activity during geocoding
             activityIndicator.hidden = false
             activityIndicator.startAnimating()
-            geocoder.geocodeAddressString(locationField.text, completionHandler: {(placemark, error) -> Void in
+            geocoder.geocodeAddressString(locationField.text!, completionHandler: {(placemark, error) -> Void in
                 if error != nil {
                     self.activityIndicator.stopAnimating()
                     // geocoding failed, show the error
                     NSNotificationCenter.defaultCenter().postNotificationName(geocodingDidFail, object: nil)
                     return
                 }
-                let location = placemark[0] as! CLPlacemark
+                let location = placemark![0]
                 let parameters = [
                     "mapString": self.locationField.text,
                     "mediaURL": self.linkField.text,
-                    "latitude": location.location.coordinate.latitude as Double,
-                    "longitude": location.location.coordinate.longitude as Double
+                    "latitude": location.location!.coordinate.latitude as Double,
+                    "longitude": location.location!.coordinate.longitude as Double
                 ]
                 // post information to server
                 let api = API()
@@ -126,7 +127,7 @@ class AddLocationViewController: UIViewController, UITextFieldDelegate {
         
         // geocode the location and create a pin
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(locationField.text, completionHandler: {(placemark, error) -> () in
+        geocoder.geocodeAddressString(locationField.text!, completionHandler: {(placemark, error) -> () in
             if error != nil {
                 // do not display any new information on the map
                 return
