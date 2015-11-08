@@ -329,8 +329,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pBw-7a-9Is">
-                                <rect key="frame" x="0.0" y="63" width="600" height="488"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pBw-7a-9Is">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <connections>
                                     <outlet property="delegate" destination="ZEH-IQ-3PO" id="R87-1i-4hg"/>
                                 </connections>
@@ -338,10 +338,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pBw-7a-9Is" firstAttribute="top" secondItem="qkp-h0-D6J" secondAttribute="bottom" constant="-1" id="8pZ-Th-HPd"/>
+                            <constraint firstItem="pBw-7a-9Is" firstAttribute="top" secondItem="qkp-h0-D6J" secondAttribute="bottom" id="8pZ-Th-HPd"/>
                             <constraint firstItem="kSP-Tt-ktt" firstAttribute="top" secondItem="pBw-7a-9Is" secondAttribute="bottom" id="Nxp-hJ-iE8"/>
-                            <constraint firstItem="pBw-7a-9Is" firstAttribute="leading" secondItem="pw3-Vw-OML" secondAttribute="leadingMargin" constant="-16" id="Vhe-UO-lim"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pBw-7a-9Is" secondAttribute="trailing" constant="-16" id="zT6-IN-1Eb"/>
+                            <constraint firstItem="pBw-7a-9Is" firstAttribute="leading" secondItem="pw3-Vw-OML" secondAttribute="leadingMargin" constant="-20" id="Vhe-UO-lim"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pBw-7a-9Is" secondAttribute="trailing" constant="-20" id="zT6-IN-1Eb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="Map" id="D6d-Uo-tbS"/>
@@ -410,6 +410,6 @@
         <image name="UdacityClear" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GMh-05-fmD"/>
+        <segue reference="u7Q-ri-iS3"/>
     </inferredMetricsTieBreakers>
 </document>
