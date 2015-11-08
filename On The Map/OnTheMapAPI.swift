@@ -128,7 +128,9 @@ class API {
                         self.appDelegate.students.append(studentInfo)
                     }
                     // finished with task, alert the view controller
-                    NSNotificationCenter.defaultCenter().postNotificationName(studentInfoDidDownload, object: nil)
+                    dispatch_async(dispatch_get_main_queue()) {
+                        NSNotificationCenter.defaultCenter().postNotificationName(studentInfoDidDownload, object: nil)
+                    }
                 }
             }
         }
