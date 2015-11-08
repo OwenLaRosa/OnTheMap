@@ -15,8 +15,8 @@ class API {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let baseURLString = "https://www.udacity.com/api/"
     
-    let parseApplicationID = "PARSE_APPLICATION_ID"
-    let parseAPIKey = "PARSE_API_KEY"
+    let parseApplicationID = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
+    let parseAPIKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
     
     func loginWithUdacity(username: String, password: String) {
         // gets session ID from Udacity account
