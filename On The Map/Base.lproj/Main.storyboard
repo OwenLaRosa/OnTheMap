@@ -148,90 +148,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNM-OR-Aau">
-                                <rect key="frame" x="16" y="72" width="72" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Where are you studying?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MW-QR-Ce5">
+                                <rect key="frame" x="144" y="55" width="313" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8TE-1r-AUt">
-                                <rect key="frame" x="16" y="101" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wic-RR-yk1">
+                                <rect key="frame" x="101" y="87" width="399" height="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Link:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxR-sV-Ift">
-                                <rect key="frame" x="16" y="139" width="37" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="personal link" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x70-TC-OH2">
+                                <rect key="frame" x="144" y="163" width="313" height="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch3-dy-LP9">
+                                <rect key="frame" x="228" y="201" width="145" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveLocation:" destination="2lR-6r-3lq" eventType="touchUpInside" id="kUb-oL-cZd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHr-ME-SaX">
+                                <rect key="frame" x="20" y="20" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissView:" destination="2lR-6r-3lq" eventType="touchUpInside" id="0xq-2n-ueY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter a link to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ux-Ws-OYQ">
+                                <rect key="frame" x="174" y="125" width="252" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fQx-pZ-MlQ">
-                                <rect key="frame" x="16" y="168" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yik-N7-4qr">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Add Location" id="gAp-J8-0Ef">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wrq-iN-8hc">
-                                            <connections>
-                                                <action selector="dismissView:" destination="2lR-6r-3lq" id="kt8-zt-Wdm"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="u3Q-EU-Xqb">
-                                            <connections>
-                                                <action selector="saveLocation:" destination="2lR-6r-3lq" id="8dw-UE-mCu"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="88N-9E-xK8">
-                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TgX-a1-z0U">
+                                <rect key="frame" x="282" y="403" width="37" height="37"/>
                             </activityIndicatorView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hVY-WE-Yh3">
-                                <rect key="frame" x="140" y="206" width="320" height="240"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FkD-ue-5UE">
+                                <rect key="frame" x="0.0" y="243" width="600" height="357"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="MEe-Ap-IPj"/>
+                                    <constraint firstAttribute="width" constant="600" id="aTZ-rW-Fc0"/>
                                 </constraints>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.16078431369999999" green="0.28235294119999998" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="sxR-sV-Ift" firstAttribute="top" secondItem="8TE-1r-AUt" secondAttribute="bottom" constant="8" id="3LB-dy-JWb"/>
-                            <constraint firstItem="8TE-1r-AUt" firstAttribute="leading" secondItem="mjl-2d-O15" secondAttribute="leadingMargin" id="6Eu-mS-4fu"/>
-                            <constraint firstItem="FQu-wh-hA3" firstAttribute="top" secondItem="hVY-WE-Yh3" secondAttribute="bottom" constant="154" id="6Ga-jW-d2T"/>
-                            <constraint firstItem="fQx-pZ-MlQ" firstAttribute="trailing" secondItem="mjl-2d-O15" secondAttribute="trailingMargin" id="8BJ-Vq-6PH"/>
-                            <constraint firstAttribute="centerX" secondItem="88N-9E-xK8" secondAttribute="centerX" id="A4m-RE-Y1a"/>
-                            <constraint firstAttribute="centerX" secondItem="hVY-WE-Yh3" secondAttribute="centerX" id="D6f-Mh-ZZa"/>
-                            <constraint firstItem="8TE-1r-AUt" firstAttribute="top" secondItem="WNM-OR-Aau" secondAttribute="bottom" constant="8" symbolic="YES" id="JgO-NE-kfS"/>
-                            <constraint firstItem="88N-9E-xK8" firstAttribute="top" secondItem="fQx-pZ-MlQ" secondAttribute="bottom" constant="92" id="LiX-xu-0iQ"/>
-                            <constraint firstItem="yik-N7-4qr" firstAttribute="top" secondItem="YCk-r7-bpO" secondAttribute="bottom" id="Osm-pX-Ph4"/>
-                            <constraint firstItem="fQx-pZ-MlQ" firstAttribute="leading" secondItem="mjl-2d-O15" secondAttribute="leadingMargin" id="cHL-PF-QzJ"/>
-                            <constraint firstItem="hVY-WE-Yh3" firstAttribute="top" secondItem="fQx-pZ-MlQ" secondAttribute="bottom" constant="8" id="cTz-0F-ZIm"/>
-                            <constraint firstItem="yik-N7-4qr" firstAttribute="leading" secondItem="mjl-2d-O15" secondAttribute="leading" id="ffW-sU-BQK"/>
-                            <constraint firstItem="8TE-1r-AUt" firstAttribute="trailing" secondItem="mjl-2d-O15" secondAttribute="trailingMargin" id="fhd-yq-Z1d"/>
-                            <constraint firstItem="WNM-OR-Aau" firstAttribute="leading" secondItem="8TE-1r-AUt" secondAttribute="leading" id="gQL-QL-krI"/>
-                            <constraint firstItem="WNM-OR-Aau" firstAttribute="top" secondItem="mjl-2d-O15" secondAttribute="top" constant="72" id="lyB-Nh-nSO"/>
-                            <constraint firstItem="fQx-pZ-MlQ" firstAttribute="top" secondItem="sxR-sV-Ift" secondAttribute="bottom" constant="8" id="vf6-KI-oEu"/>
-                            <constraint firstItem="yik-N7-4qr" firstAttribute="centerX" secondItem="8TE-1r-AUt" secondAttribute="centerX" id="wCe-MR-Qn7"/>
-                            <constraint firstItem="sxR-sV-Ift" firstAttribute="leading" secondItem="mjl-2d-O15" secondAttribute="leadingMargin" id="xWg-Re-4kW"/>
+                            <constraint firstItem="Wic-RR-yk1" firstAttribute="centerX" secondItem="mjl-2d-O15" secondAttribute="centerX" id="0xX-44-45u"/>
+                            <constraint firstItem="5Ux-Ws-OYQ" firstAttribute="centerX" secondItem="mjl-2d-O15" secondAttribute="centerX" id="1VP-fT-lS1"/>
+                            <constraint firstItem="Wic-RR-yk1" firstAttribute="top" secondItem="0MW-QR-Ce5" secondAttribute="bottom" constant="8" id="47X-Y3-kc7"/>
+                            <constraint firstItem="x70-TC-OH2" firstAttribute="centerX" secondItem="mjl-2d-O15" secondAttribute="centerX" id="5l9-3x-XNw"/>
+                            <constraint firstItem="Ch3-dy-LP9" firstAttribute="top" secondItem="x70-TC-OH2" secondAttribute="bottom" constant="8" id="6Fx-O2-tmn"/>
+                            <constraint firstItem="FkD-ue-5UE" firstAttribute="leading" secondItem="mjl-2d-O15" secondAttribute="leadingMargin" constant="-20" id="7h0-WY-YlJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FkD-ue-5UE" secondAttribute="trailing" constant="-20" id="ELW-CL-ZeP"/>
+                            <constraint firstItem="0MW-QR-Ce5" firstAttribute="top" secondItem="YCk-r7-bpO" secondAttribute="bottom" constant="35" id="Mta-9R-Hwb"/>
+                            <constraint firstItem="Ch3-dy-LP9" firstAttribute="centerX" secondItem="mjl-2d-O15" secondAttribute="centerX" id="QtT-aM-yMW"/>
+                            <constraint firstItem="5Ux-Ws-OYQ" firstAttribute="top" secondItem="Wic-RR-yk1" secondAttribute="bottom" constant="8" id="SZP-RI-bz8"/>
+                            <constraint firstItem="FQu-wh-hA3" firstAttribute="top" secondItem="TgX-a1-z0U" secondAttribute="bottom" constant="160" id="UKH-I8-7E5"/>
+                            <constraint firstItem="JHr-ME-SaX" firstAttribute="top" secondItem="YCk-r7-bpO" secondAttribute="bottom" id="VRs-nR-NaX"/>
+                            <constraint firstItem="0MW-QR-Ce5" firstAttribute="centerX" secondItem="mjl-2d-O15" secondAttribute="centerX" id="ZvF-yC-idV"/>
+                            <constraint firstItem="FkD-ue-5UE" firstAttribute="top" secondItem="Ch3-dy-LP9" secondAttribute="bottom" constant="8" id="jrI-xh-qI9"/>
+                            <constraint firstItem="x70-TC-OH2" firstAttribute="top" secondItem="5Ux-Ws-OYQ" secondAttribute="bottom" constant="8" id="pMO-hx-neX"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JHr-ME-SaX" secondAttribute="leading" id="qpS-Qb-PCd"/>
+                            <constraint firstItem="FQu-wh-hA3" firstAttribute="top" secondItem="FkD-ue-5UE" secondAttribute="bottom" id="vU5-20-w3B"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="fm5-al-bEV">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="72E-5F-Qsc"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="88N-9E-xK8" id="Ipf-fT-Qbs"/>
-                        <outlet property="linkField" destination="fQx-pZ-MlQ" id="u0h-hB-16D"/>
-                        <outlet property="locationField" destination="8TE-1r-AUt" id="AVO-Og-UUi"/>
-                        <outlet property="mapView" destination="hVY-WE-Yh3" id="LrX-mF-5uc"/>
+                        <outlet property="activityIndicator" destination="TgX-a1-z0U" id="rbU-m9-oH7"/>
+                        <outlet property="linkField" destination="x70-TC-OH2" id="KBt-Re-SX2"/>
+                        <outlet property="locationField" destination="Wic-RR-yk1" id="cPt-94-HJB"/>
+                        <outlet property="mapView" destination="FkD-ue-5UE" id="XEP-gb-uIY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpq-OF-7nk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1178" y="-56"/>
+            <point key="canvasLocation" x="1212" y="-48"/>
         </scene>
         <!--Students-->
         <scene sceneID="eie-Ee-rYN">
@@ -407,6 +410,6 @@
         <image name="UdacityClear" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u7Q-ri-iS3"/>
+        <segue reference="GMh-05-fmD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -43,7 +43,7 @@ class AddLocationViewController: UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    @IBAction func saveLocation(sender: UIBarButtonItem) {
+    @IBAction func saveLocation(sender: UIButton) {
         // remove cursor from text fields
         locationField.resignFirstResponder()
         linkField.resignFirstResponder()
