@@ -169,7 +169,7 @@ class API {
                 "mediaURL": mediaURL
             ]
             let studentInfo = StudentInformation(info: info)
-            self.appDelegate.students.append(studentInfo)
+            self.appDelegate.students[0] = studentInfo
             
             // dismiss view and update map data
             NSNotificationCenter.defaultCenter().postNotificationName(studentDataShouldUpdate, object: nil)
