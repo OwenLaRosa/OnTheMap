@@ -28,6 +28,10 @@ class MapDataViewController: UIViewController, MKMapViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         subscribeToNofitications()
+        
+        // load both tabs to ensure nav button images are visible
+        tabBarController?.selectedIndex = 1
+        tabBarController?.selectedIndex = 0
     }
     
     @IBAction func changeMapType(sender: UIBarButtonItem) {
